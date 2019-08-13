@@ -1,0 +1,6 @@
+[
+    {"name":"测试","link":"/测试/list.json"},
+    {"name":"软件","link":"/软件/list.json"},
+    {"name":"小说","link":"/小说/list.json"},
+    {"name":"图书","link":"/图书/list.json"}
+]

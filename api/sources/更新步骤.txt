@@ -1,0 +1,4 @@
+1.groupList.json 手动增加
+2.新建目录 
+3. 加入文件  运行 node xx.js 生成list.json
+4.git push
