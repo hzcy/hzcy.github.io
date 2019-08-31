@@ -45,16 +45,16 @@
       var form = layui.form;
       
       //监听提交
-      form.on('submit(form1)', function(data){
+      form.on('submit(form1)', function(){
         layer.msg("加入群一");
-        sendToAndroid("TtFCZ32h_iq5yYGV2HPGX8pvOaTlW2wg");
+        sendToAndroid1();
         return false;
       });
 
 //监听提交
-form.on('submit(form2)', function(data){
+form.on('submit(form2)', function(){
         layer.msg("加入群二");
-        sendToAndroid("awKatEwk6hiK92QnLmDtXOuvUsvQCiSi");
+        sendToAndroid2();
         return false;
       });
 
@@ -62,27 +62,29 @@ form.on('submit(form2)', function(data){
     });
 
 
-                function sendToAndroid(key) {
+                function sendToAndroid1() {
       // body...
       //console.log("call android")
       if(window.android!=null&&typeof(window.android)!="undefined"){
-        window.android.callAndroid(key);
+        window.android.callAndroid("TtFCZ32h_iq5yYGV2HPGX8pvOaTlW2wg");
+      }else{
+         //alert(typeof(window.android));
+      }
+     
+  }
+
+  function sendToAndroid2() {
+      // body...
+      //console.log("call android")
+      if(window.android!=null&&typeof(window.android)!="undefined"){
+        window.android.callAndroid("awKatEwk6hiK92QnLmDtXOuvUsvQCiSi");
       }else{
          //alert(typeof(window.android));
       }
      
   }
   </script>
-   <script>
-      layui.use('laydate', function(){
-        var laydate = layui.laydate;
-        
-        //执行一个laydate实例
-        laydate.render({
-          elem: '#test1' //指定元素
-        });
-      });
-      </script>
+  
 </body>
 </html>
     </body>
