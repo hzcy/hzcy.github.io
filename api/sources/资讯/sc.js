@@ -3,7 +3,11 @@ var join = require('path').join;
 
 function getJsonFiles(jsonPath){
  
- 
+   
+
+    //**************分组名称 */
+    var groupName = "资讯";
+    //**************分组名称 */
     let str="[";
     function findJsonFile(path){
         let files = fs.readdirSync(path);
@@ -24,9 +28,14 @@ function getJsonFiles(jsonPath){
         
             if (stat.isFile() === true) { 
                 let type = getParenthesesStr(item);
+                let strdate = getBracketStr(item);
+                //console.log(strdate);
                 let itemname = item.replace("("+type+")","");
-                //let a = '{"name":"'+itemname+'","type":"'+type+'","link":"'+item+'","date":"'+getNowFormatDate()+'"}';
-                let a = '{"name":"'+itemname+'","type":"'+type+'","link":"'+item+'"}';
+                itemname = itemname.replace(".txt","");
+                itemname = itemname.replace("["+strdate+"]","");
+                itemname = itemname.replace(".json","");
+                let a = '{"name":"'+itemname+'","type":"'+type+'","link":"/'+groupName+'/'+item+'","date":"'+strdate+'"}';
+                //let a = '{"name":"'+itemname+'","type":"'+type+'","link":"'+item+'"}';
                 
                 //console.log(m);
                 if(type != ""){
@@ -97,7 +106,17 @@ function TransferString(content)
     return result
 }
 
-
+function getBracketStr(text) {
+    let result = ''
+   
+    var a = text.match(/\[(.+?)\]/);
+    // 此时result＝["(dsfasjfj3124123)", "dsfasjfj3124123"];
+    if (a) {
+        result = a[1]; // "dsfasjfj3124123"
+    }
+    
+    return result
+}
 //获取当前时间，格式YYYY-MM-DD
 function getNowFormatDate() {
     var date = new Date();
