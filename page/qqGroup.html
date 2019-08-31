@@ -8,11 +8,82 @@
 </head>
 <body >
 
-    <div style="text-align:center;Margin:10px">
-     
-            <a target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=f23a5aa67bead374da96e5390cf25db29f4746d0bf35e4543086c0e0902fb4a1">   <button type="button" class="layui-btn layui-btn-fluid">轻舟一群</button></button></a>
-          
-            </div>
   
+      <form name="ff"   action="">
+        <div style="text-align:center;Margin:10px">
+      <button type="button" class="layui-btn layui-btn-fluid" lay-submit lay-filter="form1">轻舟一群</button>
+</div>
+<div style="text-align:center;Margin:10px">
+      <button type="button" class="layui-btn layui-btn-fluid" lay-submit lay-filter="form2">轻舟二群</button>
+    </div>      
+    </form>
+
+
+            
+          
+  
+
+
+
+
+
+
+
+
+
+
+
+
+            <script src="../layui/layui.all.js"></script>
+<script>
+
+
+ 
+
+    //Demo
+    layui.use('form', function(){
+      var form = layui.form;
+      
+      //监听提交
+      form.on('submit(form1)', function(data){
+        layer.msg("加入群一");
+        sendToAndroid("TtFCZ32h_iq5yYGV2HPGX8pvOaTlW2wg");
+        return false;
+      });
+
+//监听提交
+form.on('submit(form2)', function(data){
+        layer.msg("加入群二");
+        sendToAndroid("awKatEwk6hiK92QnLmDtXOuvUsvQCiSi");
+        return false;
+      });
+
+
+    });
+
+
+                function sendToAndroid(key) {
+      // body...
+      //console.log("call android")
+      if(window.android!=null&&typeof(window.android)!="undefined"){
+        window.android.callAndroid(key);
+      }else{
+         //alert(typeof(window.android));
+      }
+     
+  }
+  </script>
+   <script>
+      layui.use('laydate', function(){
+        var laydate = layui.laydate;
+        
+        //执行一个laydate实例
+        laydate.render({
+          elem: '#test1' //指定元素
+        });
+      });
+      </script>
+</body>
+</html>
     </body>
     </html>
