@@ -2,6 +2,8 @@
     {"name":"资讯","link":"/资讯/list.json"},
     {"name":"软件","link":"/软件/list.json"},
     {"name":"小说","link":"/小说/list.json"},
-    {"name":"图书","link":"/图书/list.json"}
-   
+    {"name":"图书","link":"/图书/list.json"},
+ {"name":"IT新闻","link":"/IT新闻/list.json"},
+ {"name":"生活","link":"/生活/list.json"},
+    {"name":"新闻","link":"/新闻/list.json"}
 ]

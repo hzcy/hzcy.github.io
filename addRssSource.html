@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>轻舟源编辑器RSS</title>
+  <link rel="stylesheet" href="../layui/css/layui.css">
+</head>
+<body>
+  
+    <form name="ff"  style="text-align:center" class="layui-form layui-form-pane" action="">
+
+        
+
+        
+              
+
+    <div class="layui-fluid">
+        <div class="layui-row">
+            <div class="layui-row layui-col-space30">
+                <div class="layui-col-lg5">
+
+                    <div class="layui-form-item layui-form-text">
+                        <fieldset class="layui-elem-field layui-field-title">
+                                <legend>源介绍</legend>
+                                <div class="layui-field-box">
+                        <div class="layui-input-block">
+                          <textarea name="desc" placeholder="可为空" class="layui-textarea"></textarea>
+                        </div>
+                                </div>
+        
+                                <div class="layui-form-item" >
+                                  <label    class="layui-form-label" style="color: blue">日期</label>
+                                  <div class="layui-input-block"  >
+                                    <input  type="text" name="date" required  lay-verify="required"  placeholder="yyyy-MM-dd" autocomplete="off" class="layui-input" id="test1">
+                                  </div>
+                                </div>
+                        </fieldset>
+                      </div>
+                    <fieldset class="layui-elem-field layui-field-title">
+                        <legend>源基本设置</legend>
+                        <div class="layui-field-box">
+    
+                            <div class="layui-form-item" pane>
+                                    <label    class="layui-form-label" style="color: blue">源分组</label>
+                                    <div class="layui-input-block"  >
+                                      <input  type="text" name="grouping" required  lay-verify="required" placeholder="" autocomplete="off" class="layui-input">
+                                    </div>
+                                  </div>
+                                  <div class="layui-form-item" pane>
+                                          <label class="layui-form-label"  style="color: blue">源标题</label>
+                                          <div class="layui-input-block">
+                                            <input id="title" type="text" name="title" required  lay-verify="required" placeholder="源标题请勿于已存在源标题相同" autocomplete="off" class="layui-input">
+                                          </div>
+                                        </div>
+                                        <div class="layui-form-item" pane>
+                                          <label class="layui-form-label">源类型</label>
+                                          <div class="layui-input-block">
+                                            <input type="radio" name="type" value="home" title="首页" checked>
+                                            <input type="radio" name="type" value="search" title="搜索" >
+                                          </div>
+                                        </div>
+                                        <div class="layui-form-item" pane>
+                                            <label class="layui-form-label" style="color: blue">源地址</label>
+                                            <div class="layui-input-block">
+                                              <input type="text" name="Firsturl" required  lay-verify="required" placeholder="" autocomplete="off" class="layui-input">
+                                            </div>
+                                          </div>
+                                     
+    
+                                                  
+                           
+                   
+           
+                      </fieldset>
+    
+                </div>
+                <div class="layui-col-lg5">
+                    <fieldset class="layui-elem-field layui-field-title">
+                        <legend>RSS规则</legend>
+                        <div class="layui-field-box">
+                               
+                                      <div class="layui-form-item" pane>
+                                        <label class="layui-form-label">页面编码</label>
+                                        <div class="layui-input-block">
+                                          <input type="radio" name="FirstCharset" value="1" title="UTF-8" checked>
+                                          <input type="radio" name="FirstCharset" value="2" title="gbk" >
+                                        </div>
+                                      </div>
+                                 
+                                      
+                                  
+                                         
+                                
+                                                  <div class="layui-form-item">
+                                                      <hr  class="layui-bg-blue" pane>
+                                                        <label class="layui-form-label" style="color: red">列表XPath</label>
+                                                        <div class="layui-input-block">
+                                                          <input type="text" name="FirstListXpath" value="{QZRSS}" required  lay-verify="required" placeholder="" autocomplete="off" class="layui-input">
+                                                        </div>
+                                                      </div>
+                                                      
+                                                     
+
+                                                  
+
+                                                         
+                                     
+                                                        
+                                                         
+                                                              
+                                                             
+                                                                 
+                                                                  
+                                                                  
+                                            
+                                                                  
+                                                                      
+                                                                       
+                                                                          <hr  class="layui-bg-blue">
+                                                                
+                        </div>
+                      </fieldset>
+    
+                      
+    
+                          <fieldset class="layui-elem-field layui-field-title">
+                                <legend>第一步结果数据展现形式及后续处理方式</legend>
+                                <div class="layui-field-box">
+                                        <div class="layui-form-item" pane>
+                                                <label class="layui-form-label" style="color: blue">显示模式</label>
+                                                <div class="layui-input-block">
+                                                  <input type="radio" name="FirstViewMode" value="1" title="垂直列表" checked>
+                                                  <input type="radio" name="FirstViewMode" value="2" title="水平列表" >
+                                                  <input type="radio" name="FirstViewMode" value="3" title="图片瀑布流" >
+                                                  <input type="radio" name="FirstViewMode" value="4" title="视频列表" >
+                                                </div>
+                                              </div>
+                                              <div class="layui-form-item" pane>
+                                                    <label class="layui-form-label" style="color: blue">链接类型</label>
+                                                    <div class="layui-input-block"> 
+                                                            <!-- //1.继续解析 2.网页 3.阅读模式 4.视频 5.文件 6.音频 7.图片 -->
+                                                      <!-- <input type="radio" name="FirstLinkType" value="1" title="继续解析" checked>
+                                                      <input type="radio" name="FirstLinkType" value="2" title="网页" >
+                                                      <input type="radio" name="FirstLinkType" value="3" title="阅读模式(未开放)" >
+                                                      <input type="radio" name="FirstLinkType" value="4" title="视频" >
+                                                      <input type="radio" name="FirstLinkType" value="5" title="文件(未开放)" >
+                                                      <input type="radio" name="FirstLinkType" value="6" title="音频(未开放)" >
+                                                      <input type="radio" name="FirstLinkType" value="7" title="图片(未开放)" >
+                                                      <input type="radio" name="FirstLinkType" value="8" title="搜索" > -->
+                                                      <input type="radio" name="FirstLinkType" value="9" title="RSS" checked>
+                                                    </div>
+                                                  </div>
+                                                  <div class="layui-form-item" pane>
+                                                        <label class="layui-form-label">阅读规则</label>
+                                                        <div class="layui-input-block">
+                                                          <input type="text" name="FirstReadModeXpath"  placeholder="不需要时可为空" autocomplete="off" class="layui-input">
+                                                        </div>
+                                                      </div>
+                                                      <div class="layui-form-item" pane>
+                                                        <label class="layui-form-label">页面编码</label>
+                                                        <div class="layui-input-block">
+                                                          <input type="radio" name="FirstReadModeCharset" value="1" title="UTF-8" checked>
+                                                          <input type="radio" name="FirstReadModeCharset" value="2" title="gbk" >
+                                                        </div>
+                                                      </div>
+                                                      <div class="layui-form-item" pane>
+                                                        <label class="layui-form-label">图片拼接</label>
+                                                        <div class="layui-input-block">
+                                                          <input type="text" name="FirstReadModeImgSrc"  placeholder="不需要时可为空" autocomplete="off" class="layui-input">
+                                                        </div>
+                                                      </div>
+                                                     
+                                </div>
+                              </fieldset>
+                </div>
+                
+               
+
+                              
+                
+               
+              </div>
+              <div class="layui-form-item">
+                  <div class="layui-input-block" >
+                    <button class="layui-btn" lay-submit lay-filter="formDemo">生成源</button>
+                    <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                  </div>
+                </div>
+        </div>
+      </div>   
+      
+      
+      </form>
+   
+            
+       
+     
+<script src="../layui/layui.all.js"></script>
+<script>
+
+
+
+
+    //Demo
+    layui.use('form', function(){
+      var form = layui.form;
+      
+      //监听提交
+      form.on('submit(formDemo)', function(data){
+        //layer.msg("即将保存到本地");
+        exportRaw(ff.title.value+'('+ff.type.value+')'+'['+ff.date.value+'].json',JSON.stringify(data.field));
+        sendHelloToAndroid(JSON.stringify(data.field));
+        return false;
+      });
+
+    });
+
+    function fakeClick(obj) {
+                  var ev = document.createEvent("MouseEvents");
+                  ev.initMouseEvent("click", true, false, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
+                  obj.dispatchEvent(ev);
+                }
+
+                function exportRaw(name, data) {
+                  var urlObject = window.URL || window.webkitURL || window;
+                  var export_blob = new Blob([data]);
+                  var save_link = document.createElementNS("http://www.w3.org/1999/xhtml", "a")
+                  save_link.href = urlObject.createObjectURL(export_blob);
+                  save_link.download = name;
+                  fakeClick(save_link);
+                } 
+
+                function sendHelloToAndroid(data) {
+      // body...
+      //console.log("call android")
+      if(window.android!=null&&typeof(window.android)!="undefined"){
+        window.android.callAndroid(data);
+      }else{
+         //alert(typeof(window.android));
+      }
+     
+  }
+  </script>
+   <script>
+      layui.use('laydate', function(){
+        var laydate = layui.laydate;
+        
+        //执行一个laydate实例
+        laydate.render({
+          elem: '#test1' //指定元素
+        });
+      });
+      </script>
+</body>
+</html>
