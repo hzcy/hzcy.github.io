@@ -158,7 +158,7 @@
                                                                 </div>
                                                               </div>
 
-                                                              <blockquote class="layui-elem-quote">提示: 对获取的数据进行处理 <br> 1.左边添加：leftjoin<br>2.右边添加：rightjoin<br>3.截取字符串：substring<br>4.替换：replace</blockquote>
+                                                              <blockquote class="layui-elem-quote">提示: 对获取的数据进行处理 <br> 1.左边添加：leftjoin<br>2.右边添加：rightjoin<br>3.截取字符串：substring<br>4.替换：replace<br>5.删除: delete</blockquote>
                                                             
                                                                 <hr  class="layui-bg-blue">
                                                         
@@ -200,7 +200,7 @@
                                                                           <hr  class="layui-bg-blue" pane>
                                                                             <label class="layui-form-label" style="color: blue">下页XPath</label>
                                                                             <div class="layui-input-block">
-                                                                              <input type="text" name="FirstNextPageXpath"  placeholder="" autocomplete="off" class="layui-input">
+                                                                              <input type="text" name="FirstNextPageXpath"  placeholder="默认为{QZLink}，需要加载下一页时输入{QZLink}即可" autocomplete="off" class="layui-input">
                                                                             </div>
                                                                           </div>
                                                                           <div class="layui-form-item" pane>
@@ -224,8 +224,8 @@
                                                 <div class="layui-input-block">
                                                   <input type="radio" name="FirstViewMode" value="1" title="垂直列表" checked>
                                                   <input type="radio" name="FirstViewMode" value="2" title="水平列表" >
-                                                  <input type="radio" name="FirstViewMode" value="3" title="图片瀑布流" >
-                                                  <input type="radio" name="FirstViewMode" value="4" title="视频列表" >
+                                                  <input type="radio" name="FirstViewMode" value="3" title="图片瀑布流(未开放)" >
+                                                  <input type="radio" name="FirstViewMode" value="4" title="视频列表(未开放)" >
                                                 </div>
                                               </div>
                                               <div class="layui-form-item" pane>
@@ -352,7 +352,7 @@
                                                                   <input type="text" name="SecondLinkProcessingValue"  placeholder="不需要时可为空" autocomplete="off" class="layui-input">
                                                                 </div>
                                                               </div>
-                                                              <blockquote class="layui-elem-quote">提示: 对获取的数据进行处理 <br> 1.左边添加：{"type":"leftjoin","value":"http://www.xx.com"};<br>2.右边添加：{"type":"rightjoin","value":"http://www.xx.com"};<br>3.截取字符串：{"type":"substring","value":"开始,结束"}<br>4.替换：{"type":"replace","value":"要替换的字符串,新字符串"}</blockquote>
+                                                              <blockquote class="layui-elem-quote">提示: 对获取的数据进行处理 <br> 1.左边添加：{"type":"leftjoin","value":"http://www.xx.com"};<br>2.右边添加：{"type":"rightjoin","value":"http://www.xx.com"};<br>3.截取字符串：{"type":"substring","value":"开始,结束"}<br>4.替换：{"type":"replace","value":"要替换的字符串,新字符串"}<br>5.删除：{"type":"delete","value":"字符串(包含该字符串的将直接不显示)"}</blockquote>
                                                             
                                                              
                                                           <hr  class="layui-bg-blue">
@@ -397,7 +397,7 @@
                                                                           <hr  class="layui-bg-blue" pane>
                                                                           <label class="layui-form-label" style="color: blue">下页XPath</label>
                                                                           <div class="layui-input-block">
-                                                                            <input type="text" name="SecondNextPageXpath"  placeholder="" autocomplete="off" class="layui-input">
+                                                                            <input type="text" name="SecondNextPageXpath"  placeholder="默认为{QZLink}，需要加载下一页时输入{QZLink}即可" autocomplete="off" class="layui-input">
                                                                           </div>
                                                                           
                                                                         </div>
@@ -420,8 +420,8 @@
                                                 <div class="layui-input-block">
                                                   <input type="radio" name="SecondViewMode" value="1" title="垂直列表" checked>
                                                   <input type="radio" name="SecondViewMode" value="2" title="水平列表" >
-                                                  <input type="radio" name="SecondViewMode" value="3" title="图片瀑布流" >
-                                                  <input type="radio" name="SecondViewMode" value="4" title="视频列表" >
+                                                  <input type="radio" name="SecondViewMode" value="3" title="图片瀑布流(未开放)" >
+                                                  <input type="radio" name="SecondViewMode" value="4" title="视频列表(未开放)" >
                                                 </div>
                                               </div>
                                               <div class="layui-form-item" pane>
@@ -544,7 +544,7 @@
                                                               </div>
                                                             </div>
                                                      
-                                                            <blockquote class="layui-elem-quote">提示: 如果要处理多次,使用大括号： <br> [{"type":"leftjoin","value":"http://www.xx.com"},<br>{"type":"rightjoin","value":"http://www.xx.com"},<br>{"type":"substring","value":"5,8"},<br>{"type":"replace","value":"要替换的字符串,新字符串"}]</blockquote>
+                                                            <blockquote class="layui-elem-quote">提示: 如果要处理多次,使用大括号： <br> [{"type":"leftjoin","value":"http://www.xx.com"},<br>{"type":"rightjoin","value":"http://www.xx.com"},<br>{"type":"substring","value":"5,8"},<br>{"type":"replace","value":"要替换的字符串,新字符串"}],<br>{"type":"delete","value":"包含该字符串直接删除(过滤作用)"}]</blockquote>
                                                             
                                                      
                                                           
@@ -590,7 +590,7 @@
                                                                           <hr  class="layui-bg-blue" pane>
                                                                             <label class="layui-form-label" style="color: blue">下页XPath</label>
                                                                             <div class="layui-input-block">
-                                                                              <input type="text" name="ThirdNextPageXpath"  placeholder="" autocomplete="off" class="layui-input">
+                                                                              <input type="text" name="ThirdNextPageXpath" placeholder="默认为{QZLink}，需要加载下一页时输入{QZLink}即可"   autocomplete="off" class="layui-input">
                                                                             </div>
                                                                           </div>
                                                                           <div class="layui-form-item" pane>
@@ -613,8 +613,8 @@
                                                 <div class="layui-input-block">
                                                   <input type="radio" name="ThirdViewMode" value="1" title="垂直列表" checked>
                                                   <input type="radio" name="ThirdViewMode" value="2" title="水平列表" >
-                                                  <input type="radio" name="ThirdViewMode" value="3" title="图片瀑布流" >
-                                                  <input type="radio" name="ThirdViewMode" value="4" title="视频列表" >
+                                                  <input type="radio" name="ThirdViewMode" value="3" title="图片瀑布流(未开放)" >
+                                                  <input type="radio" name="ThirdViewMode" value="4" title="视频列表(未开放)" >
                                                 </div>
                                               </div>
                                               <div class="layui-form-item" pane>
