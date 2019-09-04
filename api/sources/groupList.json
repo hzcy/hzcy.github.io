@@ -5,5 +5,6 @@
     {"name":"图书","link":"/图书/list.json"},
  {"name":"IT新闻","link":"/IT新闻/list.json"},
  {"name":"IT技术","link":"/IT技术/list.json"},
+ {"name":"网盘","link":"/网盘/list.json"},
     {"name":"新闻","link":"/新闻/list.json"}
 ]
