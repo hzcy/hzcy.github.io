@@ -7,5 +7,6 @@
  {"name":"IT技术","link":"/IT技术/list.json"},
  {"name":"网盘","link":"/网盘/list.json"},
     {"name":"新闻","link":"/新闻/list.json"},
-    {"name":"搞笑","link":"/搞笑/list.json"}
+    {"name":"搞笑","link":"/搞笑/list.json"},
+    {"name":"正版图书","link":"/正版图书/list.json"}
 ]
