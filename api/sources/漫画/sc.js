@@ -6,7 +6,7 @@ function getJsonFiles(jsonPath){
    
 
     //**************分组名称 */
-    var groupName = "软件";
+    var groupName = "漫画";
     //**************分组名称 */
     let str="[";
     function findJsonFile(path){
