@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <title>轻舟源编辑器</title>
-  <link rel="stylesheet" href="../layui/css/layui.css">
+  <link rel="stylesheet" href="../skiff/layui/css/layui.css">
 </head>
 <body>
   
@@ -234,11 +234,11 @@
                                                             <!-- //1.继续解析 2.网页 3.阅读模式 4.视频 5.文件 6.音频 7.图片 -->
                                                       <input type="radio" name="FirstLinkType" value="1" title="继续解析" checked>
                                                       <input type="radio" name="FirstLinkType" value="2" title="网页" >
-                                                      <input type="radio" name="FirstLinkType" value="3" title="阅读模式(未开放)" >
+                                                      <input type="radio" name="FirstLinkType" value="3" title="阅读模式" >
                                                       <input type="radio" name="FirstLinkType" value="4" title="视频" >
                                                       <input type="radio" name="FirstLinkType" value="5" title="文件(未开放)" >
                                                       <input type="radio" name="FirstLinkType" value="6" title="音频(未开放)" >
-                                                      <input type="radio" name="FirstLinkType" value="7" title="图片(未开放)" >
+                                                      <input type="radio" name="FirstLinkType" value="7" title="图片" >
                                                       <input type="radio" name="FirstLinkType" value="8" title="搜索" >
                                                       <input type="radio" name="FirstLinkType" value="9" title="RSS" >
                                                     </div>
@@ -247,6 +247,13 @@
                                                         <label class="layui-form-label">阅读规则</label>
                                                         <div class="layui-input-block">
                                                           <input type="text" name="FirstReadModeXpath"  placeholder="不需要时可为空" autocomplete="off" class="layui-input">
+                                                        </div>
+                                                      </div>
+                                                      <div class="layui-form-item" pane>
+                                                        <label class="layui-form-label">AJAX网页</label>
+                                                        <div class="layui-input-block">
+                                                          <input type="radio" name="FirstReadAjax" value="1" title="否" checked>
+                                                          <input type="radio" name="FirstReadAjax" value="2" title="是" >
                                                         </div>
                                                       </div>
                                                       <div class="layui-form-item" pane>
@@ -260,6 +267,12 @@
                                                         <label class="layui-form-label">图片拼接</label>
                                                         <div class="layui-input-block">
                                                           <input type="text" name="FirstReadModeImgSrc"  placeholder="不需要时可为空" autocomplete="off" class="layui-input">
+                                                        </div>
+                                                      </div>
+                                                      <div class="layui-form-item" pane>
+                                                        <label class="layui-form-label">加载更多</label>
+                                                        <div class="layui-input-block">
+                                                          <input type="text" name="FirstReadModeNextPage"  placeholder="不需要时可为空" autocomplete="off" class="layui-input">
                                                         </div>
                                                       </div>
                                                      
@@ -446,6 +459,13 @@
                                                         </div>
                                                       </div>
                                                       <div class="layui-form-item" pane>
+                                                        <label class="layui-form-label">AJAX网页</label>
+                                                        <div class="layui-input-block">
+                                                          <input type="radio" name="SecondReadAjax" value="1" title="否" checked>
+                                                          <input type="radio" name="SecondReadAjax" value="2" title="是" >
+                                                        </div>
+                                                      </div>
+                                                      <div class="layui-form-item" pane>
                                                         <label class="layui-form-label">页面编码</label>
                                                         <div class="layui-input-block">
                                                           <input type="radio" name="SecondReadModeCharset" value="1" title="UTF-8" checked>
@@ -456,6 +476,12 @@
                                                         <label class="layui-form-label">图片拼接</label>
                                                         <div class="layui-input-block">
                                                           <input type="text" name="SecondReadModeImgSrc"  placeholder="不需要时可为空" autocomplete="off" class="layui-input">
+                                                        </div>
+                                                      </div>
+                                                      <div class="layui-form-item" pane>
+                                                        <label class="layui-form-label">加载更多</label>
+                                                        <div class="layui-input-block">
+                                                          <input type="text" name="SecondReadModeNextPage"  placeholder="不需要时可为空" autocomplete="off" class="layui-input">
                                                         </div>
                                                       </div>
                                                      
@@ -639,6 +665,13 @@
                                                         </div>
                                                       </div>
                                                       <div class="layui-form-item" pane>
+                                                        <label class="layui-form-label">AJAX网页</label>
+                                                        <div class="layui-input-block">
+                                                          <input type="radio" name="ThirdReadAjax" value="1" title="否" checked>
+                                                          <input type="radio" name="ThirdReadAjax" value="2" title="是" >
+                                                        </div>
+                                                      </div>
+                                                      <div class="layui-form-item" pane>
                                                         <label class="layui-form-label">页面编码</label>
                                                         <div class="layui-input-block">
                                                           <input type="radio" name="ThirdReadModeCharset" value="1" title="UTF-8" checked>
@@ -649,6 +682,12 @@
                                                         <label class="layui-form-label">图片拼接</label>
                                                         <div class="layui-input-block">
                                                           <input type="text" name="ThirdReadModeImgSrc"  placeholder="不需要时可为空" autocomplete="off" class="layui-input">
+                                                        </div>
+                                                      </div>
+                                                      <div class="layui-form-item" pane>
+                                                        <label class="layui-form-label">加载更多</label>
+                                                        <div class="layui-input-block">
+                                                          <input type="text" name="ThirdReadModeNextPage"  placeholder="不需要时可为空" autocomplete="off" class="layui-input">
                                                         </div>
                                                       </div>
                                                      
@@ -674,7 +713,7 @@
             
        
      
-<script src="../layui/layui.all.js"></script>
+<script src="../skiff/layui/layui.all.js"></script>
 <script>
 
 
