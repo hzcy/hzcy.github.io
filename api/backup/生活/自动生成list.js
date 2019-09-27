@@ -5,8 +5,8 @@ function getJsonFiles(jsonPath){
  
    
 
-    //**************分组名称 */
-    var groupName = "生活";
+    //**************url+文件夹名称 */
+    var groupName = "http://www.xx.com/XX";
     //**************分组名称 */
     let str="[";
     function findJsonFile(path){
@@ -34,7 +34,7 @@ function getJsonFiles(jsonPath){
                 itemname = itemname.replace(".txt","");
                 itemname = itemname.replace("["+strdate+"]","");
                 itemname = itemname.replace(".json","");
-                let a = '{"name":"'+itemname+'","type":"'+type+'","link":"/'+groupName+'/'+item+'","date":"'+strdate+'"}';
+                let a = '{"name":"'+itemname+'","type":"'+type+'","link":"'+groupName+'/'+item+'","date":"'+strdate+'"}';
                 //let a = '{"name":"'+itemname+'","type":"'+type+'","link":"'+item+'"}';
                 
                 //console.log(m);
