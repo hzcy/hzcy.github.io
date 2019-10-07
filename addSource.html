@@ -166,7 +166,7 @@
                                                                 </div>
                                                               </div>
 
-                                                              <blockquote class="layui-elem-quote">提示: 对获取的数据进行处理 <br> 1.左边添加：leftjoin<br>2.右边添加：rightjoin<br>3.截取字符串：substring<br>4.替换：replace<br>5.删除: delete</blockquote>
+                                                              <blockquote class="layui-elem-quote">提示: 对获取的数据进行处理 <br> 1.左边添加：leftjoin<br>2.右边添加：rightjoin<br>3.截取字符串：substring<br>4.替换：replace<br>5.删除: delete<br>6.图片添加Referer: imgReferer</blockquote>
                                                             
                                                                 <hr  class="layui-bg-blue">
                                                         
@@ -373,7 +373,7 @@
                                                                   <input type="text" name="SecondLinkProcessingValue"  placeholder="不需要时可为空" autocomplete="off" class="layui-input">
                                                                 </div>
                                                               </div>
-                                                              <blockquote class="layui-elem-quote">提示: 对获取的数据进行处理 <br> 1.左边添加：{"type":"leftjoin","value":"http://www.xx.com"};<br>2.右边添加：{"type":"rightjoin","value":"http://www.xx.com"};<br>3.截取字符串：{"type":"substring","value":"开始,结束"}<br>4.替换：{"type":"replace","value":"要替换的字符串,新字符串"}<br>5.删除：{"type":"delete","value":"包含的字符串"}</blockquote>
+                                                              <blockquote class="layui-elem-quote">提示: 对获取的数据进行处理 <br> 1.左边添加：{"type":"leftjoin","value":"http://www.xx.com"}<br>2.右边添加：{"type":"rightjoin","value":"http://www.xx.com"}<br>3.截取字符串：{"type":"substring","value":"开始,结束"}<br>4.替换：{"type":"replace","value":"要替换的字符串,新字符串"}<br>5.删除：{"type":"delete","value":"包含的字符串"}<br>6.图片Referer：{"type":"imgReferer","value":"当前链接用{QZLink}"}</blockquote>
                                                             
                                                              
                                                           <hr  class="layui-bg-blue">
@@ -578,7 +578,7 @@
                                                               </div>
                                                             </div>
                                                      
-                                                            <blockquote class="layui-elem-quote">提示: 如果要处理多次,使用大括号： <br> [{"type":"leftjoin","value":"http://www.xx.com"},<br>{"type":"rightjoin","value":"http://www.xx.com"},<br>{"type":"substring","value":"5,8"},<br>{"type":"replace","value":"要替换的字符串,新字符串"}],<br>{"type":"delete","value":"包含该字符串直接删除(过滤作用)"}]</blockquote>
+                                                            <blockquote class="layui-elem-quote">提示: 如果要处理多次,使用大括号： <br> [{"type":"leftjoin","value":"http://www.xx.com"},<br>{"type":"rightjoin","value":"http://www.xx.com"},<br>{"type":"substring","value":"5,8"},<br>{"type":"replace","value":"要替换的字符串,新字符串"}],<br>{"type":"delete","value":"包含该字符串直接删除(过滤作用)"},<br>{"type":"imgReferer","value":"http://www.xxx.com"}]</blockquote>
                                                             
                                                      
                                                           
@@ -708,7 +708,7 @@
               </div>
               <div class="layui-form-item">
                   <div class="layui-input-block" >
-                    <button class="layui-btn" lay-submit lay-filter="formDemo">生成源</button>
+                    <button class="layui-btn"  lay-submit lay-filter="formDemo">生成源</button>
                     <button type="reset" class="layui-btn layui-btn-primary">重置</button>
                   </div>
                 </div>
@@ -722,50 +722,44 @@
        
      
 <script src="../skiff/layui/layui.all.js"></script>
+<script src="../skiff/layui/FileSaver.js"></script>
 <script>
+ 
+ 
 
-
-
-
+    var u = navigator.userAgent;
+    var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
+    var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+    
     //Demo
     layui.use('form', function(){
       var form = layui.form;
-      
+  
+
       //监听提交
       form.on('submit(formDemo)', function(data){
-        //layer.msg("即将保存到本地");
-        exportRaw(ff.title.value+'('+ff.type.value+')'+'['+ff.date.value+'].json',JSON.stringify(data.field));
-        sendHelloToAndroid(JSON.stringify(data.field));
+
+        var content = JSON.stringify(data.field);
+        if(isAndroid){
+          
+        }else{
+       //layer.msg("即将保存到本地");
+       
+        var blob = new Blob([content], {type: "text/plain;charset=utf-8"});
+        //exportRaw(ff.title.value+'('+ff.type.value+')'+'['+ff.date.value+'].json',JSON.stringify(data.field));
+        //sendHelloToAndroid(JSON.stringify(data.field));
+        saveAs(blob, ff.title.value+'('+ff.type.value+')'+'['+ff.date.value+'].json');
+        }
         return false;
+      
+
       });
 
+
     });
-
-    function fakeClick(obj) {
-                  var ev = document.createEvent("MouseEvents");
-                  ev.initMouseEvent("click", true, false, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
-                  obj.dispatchEvent(ev);
-                }
-
-                function exportRaw(name, data) {
-                  var urlObject = window.URL || window.webkitURL || window;
-                  var export_blob = new Blob([data]);
-                  var save_link = document.createElementNS("http://www.w3.org/1999/xhtml", "a")
-                  save_link.href = urlObject.createObjectURL(export_blob);
-                  save_link.download = name;
-                  fakeClick(save_link);
-                } 
-
-                function sendHelloToAndroid(data) {
-      // body...
-      //console.log("call android")
-      if(window.android!=null&&typeof(window.android)!="undefined"){
-        window.android.callAndroid(data);
-      }else{
-         //alert(typeof(window.android));
-      }
+        
      
-  }
+  
   </script>
    <script>
       layui.use('laydate', function(){
