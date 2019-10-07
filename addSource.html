@@ -740,16 +740,14 @@
       form.on('submit(formDemo)', function(data){
 
         var content = JSON.stringify(data.field);
-        if(isAndroid){
-          
-        }else{
+       
        //layer.msg("即将保存到本地");
        
         var blob = new Blob([content], {type: "text/plain;charset=utf-8"});
         //exportRaw(ff.title.value+'('+ff.type.value+')'+'['+ff.date.value+'].json',JSON.stringify(data.field));
         //sendHelloToAndroid(JSON.stringify(data.field));
         saveAs(blob, ff.title.value+'('+ff.type.value+')'+'['+ff.date.value+'].json');
-        }
+        
         return false;
       
 
