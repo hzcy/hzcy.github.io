@@ -5,7 +5,7 @@ function getJsonFiles(jsonPath){
  
    
 
-    //**************分组名称 */
+    //**************url+文件夹名称 */
     var groupName = "漫画";
     //**************分组名称 */
     let str="[";
