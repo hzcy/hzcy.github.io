@@ -130,7 +130,7 @@
                                                       <hr  class="layui-bg-blue" pane>
                                                         <label class="layui-form-label" style="color: red">列表XPath</label>
                                                         <div class="layui-input-block">
-                                                          <input type="text" name="FirstListXpath" required  lay-verify="required" placeholder="" autocomplete="off" class="layui-input">
+                                                          <input type="text" name="FirstListXpath"  placeholder="" autocomplete="off" class="layui-input">
                                                         </div>
                                                       </div>
                                                       <blockquote class="layui-elem-quote">提示: 列表XPath前面加上{QZJSon}即表示json</blockquote>
@@ -154,7 +154,7 @@
                                                           <div class="layui-form-item" pane>
                                                             <label class="layui-form-label" style="color: red">链接XPath</label>
                                                             <div class="layui-input-block">
-                                                              <input type="text" name="FirstLinkXpath" required  lay-verify="required" placeholder="" autocomplete="off" class="layui-input">
+                                                              <input type="text" name="FirstLinkXpath"  placeholder="" autocomplete="off" class="layui-input">
                                                             </div>
                                                           </div>
 
@@ -166,7 +166,7 @@
                                                                 </div>
                                                               </div>
 
-                                                              <blockquote class="layui-elem-quote">提示: 对获取的数据进行处理 <br> 1.左边添加：leftjoin<br>2.右边添加：rightjoin<br>3.截取字符串：substring<br>4.替换：replace<br>5.删除: delete<br>6.图片添加Referer: imgReferer</blockquote>
+                                                              <blockquote class="layui-elem-quote">提示: 对获取的数据进行处理 <br> 1.左边添加：leftjoin<br>2.右边添加：rightjoin<br>3.截取字符串：substring<br>4.替换：replace<br>5.删除: delete<br>6.图片添加Referer: imgReferer<br>7.阅读替换ReadReplace: ReadReplace</blockquote>
                                                             
                                                                 <hr  class="layui-bg-blue">
                                                         
@@ -373,7 +373,7 @@
                                                                   <input type="text" name="SecondLinkProcessingValue"  placeholder="不需要时可为空" autocomplete="off" class="layui-input">
                                                                 </div>
                                                               </div>
-                                                              <blockquote class="layui-elem-quote">提示: 对获取的数据进行处理 <br> 1.左边添加：{"type":"leftjoin","value":"http://www.xx.com"}<br>2.右边添加：{"type":"rightjoin","value":"http://www.xx.com"}<br>3.截取字符串：{"type":"substring","value":"开始,结束"}<br>4.替换：{"type":"replace","value":"要替换的字符串,新字符串"}<br>5.删除：{"type":"delete","value":"包含的字符串"}<br>6.图片Referer：{"type":"imgReferer","value":"当前链接用{QZLink}"}</blockquote>
+                                                              <blockquote class="layui-elem-quote">提示: 对获取的数据进行处理 <br> 1.左边添加：{"type":"leftjoin","value":"http://www.xx.com"}<br>2.右边添加：{"type":"rightjoin","value":"http://www.xx.com"}<br>3.截取字符串：{"type":"substring","value":"开始,结束"}<br>4.替换：{"type":"replace","value":"要替换的字符串,新字符串"}<br>5.删除：{"type":"delete","value":"包含的字符串"}<br>6.图片Referer：{"type":"imgReferer","value":"当前链接用{QZLink}"}<br>7.阅读替换：{"type":"ReadReplace","value":"正则或字符串"}</blockquote>
                                                             
                                                              
                                                           <hr  class="layui-bg-blue">
@@ -578,7 +578,7 @@
                                                               </div>
                                                             </div>
                                                      
-                                                            <blockquote class="layui-elem-quote">提示: 如果要处理多次,使用大括号： <br> [{"type":"leftjoin","value":"http://www.xx.com"},<br>{"type":"rightjoin","value":"http://www.xx.com"},<br>{"type":"substring","value":"5,8"},<br>{"type":"replace","value":"要替换的字符串,新字符串"}],<br>{"type":"delete","value":"包含该字符串直接删除(过滤作用)"},<br>{"type":"imgReferer","value":"http://www.xxx.com"}]</blockquote>
+                                                            <blockquote class="layui-elem-quote">提示: 如果要处理多次,使用大括号： <br> [{"type":"leftjoin","value":"http://www.xx.com"},<br>{"type":"rightjoin","value":"http://www.xx.com"},<br>{"type":"substring","value":"5,8"},<br>{"type":"replace","value":"要替换的字符串,新字符串"}],<br>{"type":"delete","value":"包含该字符串直接删除(过滤作用)"},<br>{"type":"imgReferer","value":"http://www.xxx.com"}]<br>{"type":"ReadReplace","value":"www[\\s\\S]本站"}]</blockquote>
                                                             
                                                      
                                                           
